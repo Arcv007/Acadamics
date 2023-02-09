@@ -1,43 +1,42 @@
 // Write a program to insert a element in the array in the index provided by the user
-#include<bits/stdc++.h>
-using namespace std; 
+#include<conio.h>
+#include<stdio.h>
+
 
 // inserting the element at the given position
 void insertion(int arr[], int a)
 {
     int element,index;
-    cout<<"enter the element and the index: "<<endl;
-    cin>>element>>index;
+    printf("enter the element and the index: ");
+    scanf("%d%d",&element,&index);
     
-    for(int i=a+1;i>=index;i--)
+    for(int i=a-1;i>=index;i--)
     {
-        arr[i]=arr[i-1];
-        if(i==index)
-            arr[i]=element;
-            break;
-
+        arr[i+1]=arr[i];
     }
+    arr[index]=element;
     return;
 }
 
 // Display the elements of the array
 void display(int arr[], int y)
 {
-    cout<<"The elements in the array are";
-    for(int i=0;i<y+1;i++)
+    printf("the elements in the array are: ");
+    for(int i=0;i<y;i++)
     {
-        cout<<arr[i]<<" ";
+        printf("%d ",arr[i]);
     }
+    printf("\n");
     return;
 }
 
 // creating the array
 void create(int arr[], int x)
 {
-    cout<<"Enter the elements";
+    printf("Enter the elements: ");
     for (int i=0;i<x;i++)
     {
-        cin>>arr[i];
+        scanf("%d",&arr[i]);
     }
     return;
 }
@@ -45,13 +44,16 @@ void create(int arr[], int x)
 int main()
 {
     int size;
-    cout<<"enter the size of the array:  ";
-    cin>>size;
+    printf("enter the size of the array:  ");
+    scanf("%d",&size);
     int arr[size];
-    cout<<endl;
+    printf("\n");
     create(arr,size);
-    insertion(arr,size);
+    printf("Before insertion ");
     display(arr,size);
+    insertion(arr,size);
+    printf("After insertion ");
+    display(arr,size+1);
     return 0;
 }
 
