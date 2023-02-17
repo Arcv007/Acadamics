@@ -31,12 +31,12 @@ void main()
 
   for (i=0;i<n1;i++)
   {
-    for(j=0;j<n2; j++)
+    for(j=0;j<n2; j++) 
     {
         if(a[i]==b[j]);
         {
           c[k]=a[i];
-          k++
+          k++;
         }
     }
   }
