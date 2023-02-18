@@ -29,15 +29,30 @@ void main()
   printf("\nEnter the elements of the set B :");
   insert(b,n2);
 
-  for (i=0;i<n1;i++)
+  for (i=0;i<n2;i++)
   {
-    for(j=0;j<n2; j++) 
+    for(j=0;j<n1; j++) 
     {
-        if(a[i]==b[j]);
+        if(a[i]==b[j])
         {
           c[k]=a[i];
           k++;
         }
+    }
+  }
+
+  if(k==0)
+  {
+    printf("\n The intersation of the sets is : { }");
+  }
+
+  else
+  {
+    printf("\n The intersation of the sets is :");
+
+    for (int i=0; i<k; i++)
+    {
+      printf("%d ",c[i]);
     }
   }
 
