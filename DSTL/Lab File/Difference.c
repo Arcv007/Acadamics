@@ -16,18 +16,23 @@ void difference(int a[], int b[], int n, int m)
     int c[n],k=0;
     for (int i=0;i<n;i++)
     {
-        for (int j=i;j<m;j++)
+        for (int j=0;j<m;j++)
         {
-            if(a[i]==b[j])
-                break;
-            else
-            {
-                c[i]==a[i];
-                k++;
-            }    
+            if(b[j]==a[i])
+            {    
+               break;
+            }
         }
+        if(j==m)
+        {
+            for(int l=0;l<k;l++)
+            {
+
+            }
+        }
+        
     }
-    printf("The difference is: ");
+    printf("\nThe difference is: ");
     for(int i=0; i<k; i++)
     {
         printf("%d",c[i]);
@@ -37,14 +42,14 @@ void difference(int a[], int b[], int n, int m)
 int main()
 {
   int x,y;
-  printf("Enter the limit of set A");
+  printf("Enter the limit of set A: ");
   scanf("%d",&x);
-  printf("\nEnter the limit of set B");
+  printf("\nEnter the limit of set B: ");
   scanf("%d",&y);
   int set1[x],set2[y];
-  printf("Enter the element in set A");
+  printf("\nEnter the element in set A: ");
   create(set1,x);
-  printf("Enter the element in set B");
+  printf("\nEnter the element in set B: ");
   create(set2,y);
   difference(set1,set2,x,y);
   return 0;
